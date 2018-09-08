@@ -47,7 +47,7 @@ begin
 			data_o <= (others => '0');
 		else
 			if clk_enable_i = '1' then
-				if sysclk'event and sysclk = '1' then
+				if rising_edge(sysclk) then
 					data_o <= data_i;
 				end if;
 			end if;
